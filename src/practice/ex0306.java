@@ -11,7 +11,7 @@ public class ex0306 {
         // 만약 실제 변경횟수가 최대변경가능횟수보다 커졌다면
         // lt를 전진하면서 0->l로 바뀐 부분을 마주했다면 다시 1->0으로 변경하여 변경 카운트를 줄인다.
         // 1로 이루어진 연속된 수열의 길이는 rt(끝인덱스) - lt(첫인덱스) + 1 이다.
-        int a = 0;
+
         Scanner in = new Scanner(System.in);
         int N = in.nextInt(); // 수열의 길이
         int K = in.nextInt(); // 최대 0-> 1 변경가능 횟수
