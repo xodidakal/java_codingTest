@@ -1,24 +1,31 @@
 package section05;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Main6 {
     public static void main(String[] args) {
+        //Queue 사용
+        // q.offer(x) : 큐에 값 삽입
+        // q.peek() : 큐의 값 확인
+        // q.poll() : 큐의 값을 확인하고 제거
+
         Scanner in  = new Scanner(System.in);
         int n = in.nextInt();
         int k = in.nextInt();
-        List<Integer> list = new ArrayList<>();
-        for(int i=1; i<=n; i++) list.add(i);
+        Queue<Integer> queue = new LinkedList<>();
 
-        int count = 0;
+        for(int i=1; i<=n; i++) queue.offer(i);
 
-        // while (list.size() > 1) {
-        //     for(int )
-        // }
-
+        int answer = 0;
+        //큐가 비어있지 않을때가지 무한루프
+        while (!queue.isEmpty()) {
+            for(int i = 1; i<k; i++) queue.offer(queue.poll());
+            queue.poll();
+            if(queue.size() == 1) answer = queue.poll();
+        }
+        System.out.println(answer);
 
     }
 }
